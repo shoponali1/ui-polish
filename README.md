@@ -29,24 +29,28 @@ You can audit any local file, component directory, or **live website URL**:
 # Run globally with npx (zero installation required)
 npx github:shoponali1/ui-polish index.html
 
-# Audit a single HTML, JSX, TSX, Vue, or Astro file
+# Audit a single HTML, JSX, TSX, Vue, Svelte, or Astro file
 ui-polish index.html
+ui-polish src/App.tsx
+ui-polish src/Header.vue
+ui-polish src/Card.svelte
 
 # Audit an entire folder and cross-check for duplicate content & orphan pages
 ui-polish src/components
 
 # Audit and automatically repair common issues (with .bak safety backup)
 ui-polish index.html --fix
+ui-polish src/App.tsx --fix
 
 # Audit a live website with network TTFB and speed telemetry
 ui-polish https://example.com
 
 # Export structured reports for CI/CD pipelines
 ui-polish index.html --json
-ui-polish index.html --markdown
+ui-polish src/components --markdown
 ```
 
-*(Or run directly with Node.js: `node .agents/skills/ui-polish/scripts/audit-ui.mjs index.html`)*
+*(Note: If you don't install the global command, you can always run the script directly via Node.js on any file or folder: `node .agents/skills/ui-polish/scripts/audit-ui.mjs <file-or-dir>`)*
 
 ### 2. Install into AI Coding Agents
 
