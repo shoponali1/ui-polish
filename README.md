@@ -50,7 +50,7 @@ ui-polish index.html --markdown
 
 ### 2. Install into AI Coding Agents
 
-UI Polish follows the universal Agent Skills standard and integrates natively with leading autonomous coding platforms:
+UI Polish follows the universal Agent Skills standard and integrates natively with all leading autonomous coding agents:
 
 #### 🪐 Google Antigravity (`agy` CLI & IDE)
 Install globally or per-project into Antigravity:
@@ -72,6 +72,16 @@ gemini skills add shoponali1/ui-polish
 git clone https://github.com/shoponali1/ui-polish.git ~/.gemini/skills/ui-polish
 ```
 
+#### 🟣 Claude Code (Anthropic)
+Install natively into Anthropic's Claude Code CLI:
+```bash
+# Install via Claude Code skills manager
+npx skills add shoponali1/ui-polish
+
+# Or install globally across all Claude sessions
+npx skills add shoponali1/ui-polish -g -y
+```
+
 #### 🧠 Hermes Agent (Nous Research)
 Integrate with Hermes autonomous agent workflows:
 ```bash
@@ -82,14 +92,58 @@ hermes skills add shoponali1/ui-polish
 git clone https://github.com/shoponali1/ui-polish.git .agents/skills/ui-polish
 ```
 
-#### 🦅 OpenClaw & Claude Code
-Install into OpenClaw or Anthropic's Claude Code:
+#### 🦅 OpenClaw
+Install into OpenClaw autonomous workflows:
 ```bash
 # OpenClaw skill installation
 openclaw skills add shoponali1/ui-polish
+```
 
-# Claude Code universal skill install
-npx skills add shoponali1/ui-polish
+#### ⚡ Cursor (Agent Mode & Composer)
+Add UI Polish standards directly to your Cursor workspace:
+```bash
+# Clone into workspace agent skills
+git clone https://github.com/shoponali1/ui-polish.git .agents/skills/ui-polish
+
+# Or reference in .cursorrules:
+# "Follow UI Polish standards in .agents/skills/ui-polish/SKILL.md and run ui-polish index.html --fix"
+```
+
+#### 🌊 Windsurf (Codeium Cascade)
+Add UI Polish to Windsurf workspace:
+```bash
+# Clone into project skills directory
+git clone https://github.com/shoponali1/ui-polish.git .agents/skills/ui-polish
+```
+
+#### 🤖 Cline & Roo Code (VS Code Autonomous Agents)
+Install into Cline or Roo Code for autonomous UI repairing:
+```bash
+# Install globally via npx
+npx skills add shoponali1/ui-polish -g -y
+
+# Or add to your workspace .clinerules / .roomodes
+```
+
+#### 💻 Aider (Terminal AI Pair Programmer)
+Give Aider the complete UI Polish rulebook during coding sessions:
+```bash
+# Run Aider with UI Polish loaded into context
+aider --read .agents/skills/ui-polish/SKILL.md
+```
+
+#### 🔌 Continue.dev (VS Code & JetBrains)
+Load UI Polish standards into Continue.dev:
+```bash
+# Clone into your local workspace
+git clone https://github.com/shoponali1/ui-polish.git .agents/skills/ui-polish
+```
+
+#### 🌐 OpenHands (All-Hands AI / OpenDevin)
+Equip OpenHands autonomous software engineering agents:
+```bash
+# Install into OpenHands agent workspace
+git clone https://github.com/shoponali1/ui-polish.git .agents/skills/ui-polish
 ```
 
 ---
