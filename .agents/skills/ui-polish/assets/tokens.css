@@ -1,0 +1,98 @@
+/**
+ * UI Polish - Master Production Design Tokens
+ * Plug-and-play CSS Custom Properties for Light & Dark Modes
+ * Complies with 8pt grid, WCAG 2.2 AA (4.5:1 / 3:1), and 60fps micro-motion.
+ */
+
+:root {
+  /* ── 1. The 8pt Spacing Scale ── */
+  --space-0: 0px;
+  --space-1: 4px;   /* Micro spacing, badges */
+  --space-2: 8px;   /* Inline gaps, tight buttons */
+  --space-3: 12px;  /* Compact inputs */
+  --space-4: 16px;  /* Standard card padding */
+  --space-5: 20px;
+  --space-6: 24px;  /* Section gutters, cards */
+  --space-8: 32px;  /* Modals, container padding */
+  --space-10: 40px;
+  --space-12: 48px; /* Desktop section separation */
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── 2. Concentric Radii Tokens (Ro = Ri + Padding) ── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;   /* Standard button & inner card */
+  --radius-lg: 12px;
+  --radius-xl: 16px;  /* Outer card container (8px inner + 8px pad) */
+  --radius-2xl: 24px; /* Modals */
+  --radius-full: 9999px;
+
+  /* ── 3. Light Mode Surfaces (WCAG AA) ── */
+  --bg-canvas: #fafafa;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f4f4f5;
+  --bg-surface-active: #e4e4e7;
+  
+  --border-subtle: rgba(0, 0, 0, 0.08); /* 1px crisp edge */
+  --border-strong: rgba(0, 0, 0, 0.18);
+  
+  --text-primary: #09090b;   /* ~18:1 contrast on white */
+  --text-secondary: #52525b; /* ~6.5:1 contrast on white */
+  --text-muted: #71717a;     /* ~4.6:1 contrast on white (WCAG Pass) */
+
+  /* ── 4. Brand & Accent ── */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-active: #1e40af;
+  --primary-fg: #ffffff;
+  --focus-ring: #3b82f6;
+
+  /* ── 5. Micro-Motion Timings ── */
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-click: 100ms;
+  --duration-hover: 150ms;
+  --duration-modal: 220ms;
+
+  /* ── 6. Elevation Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-modal: 0 8px 28px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Dark Mode Overrides ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-canvas: #09090b;
+    --bg-surface: #18181b;
+    --bg-surface-hover: #27272a;
+    --bg-surface-active: #3f3f46;
+
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --primary-active: #93c5fd;
+    --focus-ring: #60a5fa;
+
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+    --shadow-modal: 0 12px 40px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ── Universal Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

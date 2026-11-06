@@ -1,0 +1,30 @@
+<!--
+  UI Polish - AEO Direct-Answer FAQ Accordion
+  Complies with:
+  - Question heading (H2/H3) for Google Featured Snippets & Perplexity
+  - Concise 40-word direct-answer summary
+  - Native accessible <details> with smooth zero-layout-thrash styling
+-->
+
+<details class="group p-4 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-150 open:bg-slate-50/50 dark:open:bg-zinc-800/40">
+  <summary class="flex items-center justify-between cursor-pointer list-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1">
+    <span class="text-base font-semibold text-slate-900 dark:text-zinc-100">
+      Is there a free tier for individual developers?
+    </span>
+    <span class="ml-4 flex-shrink-0 text-slate-500 transition-transform duration-200 group-open:rotate-180">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </summary>
+
+  <div class="mt-3 pt-3 border-t border-slate-100 dark:border-zinc-800">
+    <p class="text-sm font-medium text-slate-700 dark:text-zinc-300">
+      Yes. The Developer Tier is 100% free with 10,000 monthly active users and 5GB storage, requiring no credit card to start.
+    </p>
+    <p class="mt-2 text-xs text-slate-500 dark:text-zinc-400">
+      You can upgrade at any time to the Team Plan for expanded compute and team permissions.
+    </p>
+  </div>
+</details>
+

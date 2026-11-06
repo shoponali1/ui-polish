@@ -1,0 +1,49 @@
+{
+  "name": "ui-polish",
+  "version": "1.0.0",
+  "description": "Production-grade frontend engineering, accessibility, SEO, Core Web Vitals & UI audit engine",
+  "type": "module",
+  "main": ".agents/skills/ui-polish/scripts/audit-ui.mjs",
+  "bin": {
+    "ui-polish": ".agents/skills/ui-polish/scripts/audit-ui.mjs"
+  },
+  "scripts": {
+    "audit": "node .agents/skills/ui-polish/scripts/audit-ui.mjs",
+    "test": "node .agents/skills/ui-polish/scripts/audit-ui.mjs --help"
+  },
+  "keywords": [
+    "ui",
+    "ux",
+    "accessibility",
+    "wcag",
+    "seo",
+    "aeo",
+    "geo",
+    "core-web-vitals",
+    "linter",
+    "audit",
+    "copywriting",
+    "agent-skill",
+    "antigravity",
+    "claude-skill"
+  ],
+  "author": "shoponali1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoponali1/ui-polish.git"
+  },
+  "homepage": "https://github.com/shoponali1/ui-polish#readme",
+  "bugs": {
+    "url": "https://github.com/shoponali1/ui-polish/issues"
+  },
+  "files": [
+    ".agents/skills/ui-polish",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Polish — Visual Playground & Quality Tester</title>
+  <style>
+    :root {
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-xl: 16px;
+      --bg-canvas: #fafafa;
+      --bg-surface: #ffffff;
+      --text-main: #09090b;
+      --text-muted: #71717a;
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-canvas);
+      color: var(--text-main);
+      padding: var(--space-8) var(--space-4);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: var(--space-8);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+    header p {
+      color: var(--text-muted);
+      margin-top: var(--space-2);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 6px 16px rgba(0,0,0,0.02);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-3);
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Demo 1: Button States ── */
+    .btn-polished {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      background: var(--primary);
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: all 150ms var(--ease-snappy);
+    }
+    .btn-polished:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    }
+    .btn-polished:active {
+      transform: scale(0.98);
+      background: #1e40af;
+    }
+    .btn-polished:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* ── Demo 2: Concentric Radius Simulator ── */
+    .radius-outer {
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: var(--space-4);
+      transition: all 150ms ease;
+    }
+    .radius-inner {
+      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #334155;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 150ms ease;
+    }
+
+    /* ── Demo 3: Live AI Slop Tester ── */
+    textarea {
+      width: 100%;
+      height: 110px;
+      padding: var(--space-3);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    textarea:focus-visible {
+      outline: 2px solid var(--primary);
+    }
+    .slop-results {
+      margin-top: var(--space-3);
+      min-height: 48px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      margin-right: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
+    .badge-error { background: #fee2e2; color: #991b1b; }
+    .badge-success { background: #dcfce7; color: #166534; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>UI Polish Interactive Playground</h1>
+      <p>Test 60fps micro-motion, concentric radius math, and live multilingual AI-slop detection.</p>
+    </header>
+
+    <div class="grid grid-2">
+      <!-- Card 1: 5-State Button Test -->
+      <div class="card">
+        <h2>1. Micro-Interactions & Button States</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+          Click and hold to test tactile <code>scale(0.98)</code> press-down, or press <kbd>Tab</kbd> to inspect the high-contrast <code>:focus-visible</code> ring.
+        </p>
+        <button class="btn-polished">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>Save Changes</span>
+        </button>
+      </div>
+
+      <!-- Card 2: Concentric Radius Math -->
+      <div class="card">
+        <h2>2. Concentric Radius Calculator</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+          Formula: <code>Outer Radius = Inner Radius + Padding</code>
+        </p>
+        <div style="display: flex; gap: 16px; font-size: 0.85rem;">
+          <label>Padding: <b id="pad-val">12px</b><br>
+            <input type="range" id="pad-slider" min="4" max="24" value="12" step="4">
+          </label>
+          <label>Inner Radius: <b id="inner-val">8px</b><br>
+            <input type="range" id="inner-slider" min="4" max="24" value="8" step="2">
+          </label>
+        </div>
+        <div class="radius-outer" id="outer-box" style="padding: 12px; border-radius: 20px; height: 110px;">
+          <div class="radius-inner" id="inner-box" style="border-radius: 8px;">
+            Concentric Harmony: Outer = <span id="outer-formula" style="margin-left: 4px;">20px</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Width Card: Live AI Slop Tester -->
+    <div class="card" style="margin-top: 24px;">
+      <h2>3. Multilingual AI Slop & Fingerprint Live Tester</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+        Type or paste any English or Bengali text below to test instant AI-slop and cliché detection.
+      </p>
+      <textarea id="slop-input" placeholder="Try pasting: 'আমাদের যুগান্তকারী প্ল্যাটফর্মটি কেবল একটি টুল নয়, বরং ব্যবসার এক নতুন দিগন্ত — ensuring zero downtime.'"></textarea>
+      
+      <div class="slop-results" id="slop-output">
+        <span class="badge badge-success">Type text above to scan for AI slop and fingerprints...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Concentric radius logic
+    const padSlider = document.getElementById('pad-slider');
+    const innerSlider = document.getElementById('inner-slider');
+    const padVal = document.getElementById('pad-val');
+    const innerVal = document.getElementById('inner-val');
+    const outerBox = document.getElementById('outer-box');
+    const innerBox = document.getElementById('inner-box');
+    const outerFormula = document.getElementById('outer-formula');
+
+    function updateRadius() {
+      const p = parseInt(padSlider.value, 10);
+      const r = parseInt(innerSlider.value, 10);
+      const outerR = p + r;
+      padVal.textContent = p + 'px';
+      innerVal.textContent = r + 'px';
+      outerBox.style.padding = p + 'px';
+      outerBox.style.borderRadius = outerR + 'px';
+      innerBox.style.borderRadius = r + 'px';
+      outerFormula.textContent = outerR + 'px (' + r + ' + ' + p + ')';
+    }
+    padSlider.addEventListener('input', updateRadius);
+    innerSlider.addEventListener('input', updateRadius);
+
+    // AI Slop detection logic in browser
+    const slopInput = document.getElementById('slop-input');
+    const slopOutput = document.getElementById('slop-output');
+
+    const bannedWords = ['বিপ্লবী', 'যুগান্তকারী', 'উৎকর্ষ', 'এক নতুন দিগন্ত', 'delve', 'streamline', 'harness', 'leverage', 'supercharge', 'robust', 'cutting-edge'];
+    const patterns = [
+      { name: 'Binary Contrast ("শুধু X নয়, বরং Y")', regex: /(?:শুধু|কেবল|শুধুমাত্র)[\s\S]+?(?:নয়|না)[\s\S]+?(?:বরং|এটি|কিন্তু)/iu },
+      { name: 'Em-dash (—) Overuse', regex: /[\u2014—]/u },
+      { name: 'Triadic 3-Word List', regex: /[\p{L}\p{M}\d]+,\s+[\p{L}\p{M}\d]+,?\s+(?:এবং|বা|and|or)\s+[\p{L}\p{M}\d]+/iu }
+    ];
+
+    slopInput.addEventListener('input', () => {
+      const val = slopInput.value.trim();
+      if (!val) {
+        slopOutput.innerHTML = '<span class="badge badge-success">Type text above to scan...</span>';
+        return;
+      }
+      const flags = [];
+      bannedWords.forEach(w => {
+        if (new RegExp(w, 'i').test(val)) flags.push('Banned Buzzword: "' + w + '"');
+      });
+      patterns.forEach(p => {
+        if (p.regex.test(val)) flags.push(p.name);
+      });
+
+      if (flags.length === 0) {
+        slopOutput.innerHTML = '<span class="badge badge-success">🎉 Clean Human Copy! Zero AI Slop Detected.</span>';
+      } else {
+        slopOutput.innerHTML = flags.map(f => '<span class="badge badge-error">⚠️ ' + f + '</span>').join('');
+      }
+    });
+  </script>
+</body>
+</html>
+

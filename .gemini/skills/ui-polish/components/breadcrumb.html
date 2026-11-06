@@ -1,0 +1,35 @@
+<!-- Accessible Breadcrumb Navigation Component with Microdata / Schema -->
+<nav aria-label="Breadcrumb" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 text-sm">
+  <ol class="flex items-center space-x-2 text-slate-500 dark:text-zinc-400">
+    <!-- Home Link -->
+    <li class="flex items-center">
+      <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded transition-colors inline-flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        <span>Home</span>
+      </a>
+    </li>
+
+    <!-- Separator -->
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600 select-none">/</li>
+
+    <!-- Parent Category -->
+    <li class="flex items-center">
+      <a href="/services" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded transition-colors">
+        Services
+      </a>
+    </li>
+
+    <!-- Separator -->
+    <li aria-hidden="true" class="text-slate-400 dark:text-zinc-600 select-none">/</li>
+
+    <!-- Current Active Page (Not clickable, marked with aria-current="page") -->
+    <li class="flex items-center">
+      <span class="font-medium text-slate-900 dark:text-white" aria-current="page">
+        Web Performance Optimization
+      </span>
+    </li>
+  </ol>
+</nav>
+
