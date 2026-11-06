@@ -1,6 +1,6 @@
 ---
 name: ui-polish
-description: Production-grade UI polish and semantic framework. Covers CSS styling, 8pt spacing rhythm, WCAG color contrast, concentric border-radius, micro-animations, button hover/focus states, responsive layout perfection, H1-H6 semantic heading hierarchy, SEO/AEO/GEO keyword distribution, and multilingual AI-slop & fingerprint detection.
+description: Use when designing, building, auditing, or polishing user interfaces, web components, or HTML/CSS layouts. Triggers on "review my UI", "polish this screen", "check accessibility", "fix dark mode", "audit SEO headings", "page speed optimization", "improve CTA copy", "check duplicate content", or detecting AI slop.
 ---
 
 # UI Polish: The Production-Ready Semantic & Visual Framework
@@ -8,7 +8,7 @@ description: Production-grade UI polish and semantic framework. Covers CSS styli
 ## Overview
 A polished digital product is not just "good-looking"—it is architecturally sound, semantically accessible, lightning-fast, and pleasant to interact with.
 
-**UI Polish** is organized into 8 modular pillars. When implementing or reviewing UI code, use the **Module Router** below to navigate to the exact reference document required:
+**UI Polish** is organized into 14 modular pillars. When implementing or reviewing UI code, use the **Module Router** below to navigate to the exact reference document required:
 
 ---
 
