@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive visual testing environment for UI Polish geometry, concentric radii, micro-interactions, and multilingual AI slop detection.">
+  <link rel="canonical" href="https://shoponali1.github.io/ui-polish/playground.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "UI Polish Playground",
+    "url": "https://shoponali1.github.io/ui-polish/playground.html",
+    "description": "Interactive visual testing environment for UI Polish geometry, concentric radii, micro-interactions, and multilingual AI slop detection.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All"
+  }
+  </script>
   <title>UI Polish — Visual Playground & Quality Tester</title>
   <style>
     :root {
@@ -92,7 +105,7 @@
       border-radius: var(--radius-md);
       cursor: pointer;
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: all 150ms var(--ease-snappy);
+      transition: transform 150ms var(--ease-snappy), background-color 150ms ease, box-shadow 150ms ease;
     }
     .btn-polished:hover {
       background: var(--primary-hover);
@@ -114,7 +127,7 @@
       align-items: center;
       justify-content: center;
       margin-top: var(--space-4);
-      transition: all 150ms ease;
+      transition: border-radius 150ms ease, padding 150ms ease;
     }
     .radius-inner {
       background: #ffffff;
@@ -127,7 +140,7 @@
       font-size: 0.85rem;
       color: #334155;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: all 150ms ease;
+      transition: border-radius 150ms ease;
     }
 
     /* ── Demo 3: Live AI Slop Tester ── */
