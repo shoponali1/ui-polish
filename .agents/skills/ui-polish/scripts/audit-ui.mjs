@@ -947,7 +947,7 @@ async function main() {
     if (stat.isDirectory()) {
       const dirFiles = fs.readdirSync(targetPath);
       for (const df of dirFiles) {
-        if (/\.(html|htm|jsx|tsx|vue|astro)$/i.test(df)) {
+        if (/\.(html|htm|jsx|tsx|vue|astro|svelte)$/i.test(df)) {
           filesToAudit.push(path.join(targetPath, df));
         }
       }
@@ -957,7 +957,7 @@ async function main() {
   }
 
   if (filesToAudit.length === 0) {
-    console.error('No audit-eligible files (.html, .htm, .jsx, .tsx, .vue, .astro) found.');
+    console.error('No audit-eligible files (.html, .htm, .jsx, .tsx, .vue, .astro, .svelte) found.');
     process.exit(1);
   }
 
